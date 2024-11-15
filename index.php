@@ -176,7 +176,7 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Damas</a></h4>
+									<h4 class="panel-title"><a href="#">Caballeros</a></h4>
 									<h4 class="panel-title"><a href="#">Damas</a></h4>
 								</div>
 							</div>
@@ -203,18 +203,20 @@
 										<div class="productinfo text-center">
 											<?php
 											$img = $BDProductos[$n];
+											$productoB = $BDProductos[$n+2];
+											$precioB = $BDProductos[$n+1];
 											 ?>
 											<img src="images/home/<?php echo $img; ?>.jpg" width="210" 
 											height="180" alt="" />
-											<h2><?php echo $BDProductos[$n+2]; ?></h2>
-											<p><?php echo $BDProductos[$n+1]; ?></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+											<h2><?php echo $productoB; ?></h2>
+											<p><?php echo $precioB; ?></p>
+											<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2><?php echo $BDProductos[2][$i]; ?></h2>
-											<p><?php echo $BDProductos[1][$i]; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												<h2><?php echo $precioB; ?></h2>
+											<p><?php echo $productoB; ?></p>
+												<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
