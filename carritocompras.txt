@@ -1,0 +1,8 @@
+1, blusa,200,mujer
+2, lentes,380,caballero
+3, playera azul,250,caballeros
+4, blusa ligera,100,damas
+5, vestido,450,damas
+6, playera roja,300,caballero
+7, calcetines,80,caballero
+, ,,
