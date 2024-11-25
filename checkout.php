@@ -187,6 +187,7 @@
 						 if(file_exists('carritodecompras.txt')){
          $content = trim(file_get_contents('carritodecompras.txt'), PHP_EOL);
          $lineas = explode(PHP_EOL, $content);
+         $totaL = 0;
          foreach($lineas as $linea) {
             list($productoE, $precioE) = explode(',', $linea);
            //si el archivo tiene enters el programa truena
@@ -196,11 +197,11 @@
 								<a href=""><img src="images/cart/one.png" alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">Producto 1</a></h4>
+								<h4><a href=""><?php echo $productoE ?></a></h4>
 								<p>Categoría</p>
 							</td>
 							<td class="cart_price">
-								<p>$0</p>
+								<p><?php echo "$ " . $precioE ?></p>
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
@@ -210,13 +211,14 @@
 								</div>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">$0</p>
+								<p class="cart_total_price"><?php echo "$ " . $precioE ?></p>
 							</td>
 							<td class="cart_delete">
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 							<?php
+							$total = $total + $precioE;
 				} 
 				}
 				?>					
@@ -226,11 +228,11 @@
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Sub Total</td>
-										<td>$0</td>
+										<td><?php echo "$" . $total; ?></td>
 									</tr>
 									<tr>
 										<td>Impuestos</td>
-										<td>$0</td>
+										<td><?php echo "$" . $total * .16; ?></td>
 									</tr>
 									<tr class="shipping-cost">
 										<td>Costo de Envío</td>
@@ -238,7 +240,7 @@
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span>$0</span></td>
+										<td><span><?php echo "$" . $total + ($total * .16); ?></span></td>
 									</tr>
 								</table>
 							</td>
