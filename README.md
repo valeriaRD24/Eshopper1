@@ -1,9 +1,10 @@
-# Eshopper1
-sitio WEB de Punto de Venta de Ropa
+# Eshopper
 
-creado por: valeria romero diaz
-fecha:28 octubre 2024
+Sitio WEB de Punto de Venta de Ropa
 
-proyecto final del submodulo 
+Creado por: Jose Alejandro Cisneros
+Fecha: 28 de Octubre 2024
 
-3o de programacion vesp
+Proyecto Final de Submodulo
+
+3o de programacion Vesp

@@ -2,7 +2,7 @@
    if (isset($_GET['producto'])){
       $producto = $_GET['producto'];
       $precio = $_GET['precio']; 
-      $file = @fopen("carritocompras.txt", "a"); 
+      $file = @fopen("carritodecompras.txt", "a"); 
       fwrite($file, "$producto,$precio".PHP_EOL);
       fclose($file); 
    } else {
@@ -135,19 +135,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php 
-  if(file_exists('carritocompras.txt')){
-    $content = trim(file_get_contents('carritocompras.txt'), PHP_EOL);
-    $lineas = explode(PHP_EOL, $content);
-    foreach($lineas as $linea){
-      list($productoE, $precioE) = explode(',', $linea);
-?>
+						<?php
+						 if(file_exists('carritodecompras.txt')){
+         $content = trim(file_get_contents('carritodecompras.txt'), PHP_EOL);
+         $lineas = explode(PHP_EOL, $content);
+         foreach($lineas as $linea){
+            list($productoE, $precioE) = explode(',', $linea);
+           //si el archivo tiene enters el programa truena
+         ?>
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src="images/cart/one.png" alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href=""><?php echo $precioE; ?></a></h4>
+								<h4><a href=""><?php echo $productoE; ?></a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
@@ -161,13 +162,19 @@
 								</div>
 							</td>
 							<td class="cart_total">
-								<p class "cart_total_price"><?php echo $precioE;?></p>
+								<p class="cart_total_price"><?php echo $precioE; ?></p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						<?php
-					}//cierra el ciclo for
-				}//cierra la condicion IF
-				?>
+
+?>
+						<?php
+					   } //cierra el ciclo for
+					}//cierra el ciclo if
+					?>
 					</tbody>
 				</table>
 			</div>
@@ -189,7 +196,8 @@
 							<li>Total <span>$61</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Actualizar</a>
-							<a class="btn btn-default check_out" href="vaciarcarrito.php">vaciar carrito</a>
+							<a class="btn btn-default check_out" href="vaciarcarrito.php" target="_blank">vaciar</a>
+							
 					</div>
 				</div>
 			</div>
