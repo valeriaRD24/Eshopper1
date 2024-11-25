@@ -1,1 +1,2 @@
- Lentes,180
+ Blusa,100
+ Blusa Ligera,100

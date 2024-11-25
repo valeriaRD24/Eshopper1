@@ -33,8 +33,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 1200 776</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> atencionclientes@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 671 767 6346</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> Alejandrobriava26_15@outlook.com</a></li>
 							</ul>
 						</div>
 					</div>					
@@ -183,15 +183,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php
-						 if(file_exists('carritodecompras.txt')){
-         $content = trim(file_get_contents('carritodecompras.txt'), PHP_EOL);
-         $lineas = explode(PHP_EOL, $content);
-         $totaL = 0;
-         foreach($lineas as $linea) {
-            list($productoE, $precioE) = explode(',', $linea);
-           //si el archivo tiene enters el programa truena
-         ?>
+											<?php 
+   if(file_exists('carritodecompras.txt')){
+      $content = trim(file_get_contents('carritodecompras.txt'), PHP_EOL);
+      $lineas = explode(PHP_EOL, $content);
+      $total = 0;
+      foreach($lineas as $linea){
+         list($productoE, $precioE) = explode(',', $linea);
+?>
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src="images/cart/one.png" alt=""></a>
@@ -217,22 +216,22 @@
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-							<?php
-							$total = $total + $precioE;
-				} 
-				}
-				?>					
+						<?php
+						$total = $total + $precioE; 
+      }   //Cierra el Ciclo For
+      }     //Cierra la condición IF
+?>												
 						<tr>
 							<td colspan="4">&nbsp;</td>
 							<td colspan="2">
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Sub Total</td>
-										<td><?php echo "$" . $total; ?></td>
+										<td><?php echo "$ " . $total; ?></td>
 									</tr>
 									<tr>
 										<td>Impuestos</td>
-										<td><?php echo "$" . $total * .16; ?></td>
+										<td><?php echo "$ " . $total * .16; ?></td>
 									</tr>
 									<tr class="shipping-cost">
 										<td>Costo de Envío</td>
@@ -240,7 +239,7 @@
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span><?php echo "$" . $total + ($total * .16); ?></span></td>
+										<td><span><?php echo "$ " . $total +($total * .16); ?></span></td>
 									</tr>
 								</table>
 							</td>
