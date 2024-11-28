@@ -239,7 +239,7 @@
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span><?php echo "$ " . $total +($total * .16); ?></span></td>
+										<td><span><?php echo "$ " . $total + ($total * .16); ?></span></td>
 									</tr>
 								</table>
 							</td>
