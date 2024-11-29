@@ -1,1 +1,2 @@
  Blusa,100
+ Lentes,180

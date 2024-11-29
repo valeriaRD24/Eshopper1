@@ -239,7 +239,7 @@
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span><?php echo "$ " . $total + ($total * .16); ?></span></td>
+										<td><span><?php echo "$ " . $total +($total * .16); ?></span></td>
 									</tr>
 								</table>
 							</td>
@@ -254,6 +254,8 @@
 					<span>
 						<label><input type="checkbox"> Paypal</label>
 					</span>
+					<a class="btn btn-primary" href="fpdf/ticket.php" target="_blank">Pagar</a>
+
 				</div>
 		</div>
 	</section> <!--/#cart_items-->

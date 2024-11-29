@@ -7,6 +7,7 @@
     list($id, $producto, $precio, $categoria) = explode(",", $value);
     array_push($BDProductos, $id);
     array_push($BDProductos, $producto);
+    //en esta parte aparecia un error en la linea 7 y 9 :/
     array_push($BDProductos, $precio);
     array_push($BDProductos, $categoria);
     $iProductos++;
@@ -31,7 +32,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="valeria romero y saul luna" content="">
+    <meta name="Alejandro Briones" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -59,8 +60,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 131 1979</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i>valediaz.cbtis89@gmail.com/a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 131 1979</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> valediaz.cbtis89@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -81,10 +82,10 @@
 					</div>
 					<H3>SOFTWARE PUNTO DE VENTA</H3>
 					<div class="col-sm-8">
-						Por:valeria Romero y Saul Luna
+						Por:valeria Romero y saul luna
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li> 
+								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li>
 								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Pagar</a></li>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
@@ -189,14 +190,14 @@
 					
 					</div>
 				</div>
-
+				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Catálogo de Productos</
 						h2>
 						<?php
-						 $n=4;
-						 for ($i=1; $i < $iProductos; $i++){
+						$n=4;
+						    for ($i=1; $i < $iProductos; $i++){
 
 						?>
 						<div class="col-sm-4">
@@ -204,31 +205,32 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<?php
-											$img = $BDProductos[$n];
-											$productoB = $BDProductos[$n+1];
-											$precioB = $BDProductos[$n+2];
-										?>
+											$img = $BDProductos [$n];
+											$productoB = $BDProductos [$n+1];
+											$precioB = $BDProductos [$n+2]
+											?>
 											<img src="images/home/<?php echo $img;?>
 											.jpg" width ="210" height="180"alt="" />
 											<h2><?php echo $productoB; ?></h2>
-											<p><?php echo $precioB; ?></p>
-											<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+											<p><?php echo $precioB; ?> </p>
+											<a href="cart.php?producto=<?php echo $productoB; ?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2><?php echo $precioB;?></h2>
-												<p><?php echo $productoB;?></p>
-												<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												<h2><?php echo $precioB ; ?> </h2>
+												<p><?php echo $productoB; ?></p>
+												<a href="cart.php?producto=<?php echo $productoB; ?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
 							</div>
 						</div>
 					<?php 
-             $n+=4;
-              }
-           ?>
-				 </div><!--features_items-->
+					$n+=4;
+				} 
+				?>
+						
+					</div><!--features_items-->
 					
 					
 					
