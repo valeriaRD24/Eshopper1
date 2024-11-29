@@ -1,4 +1,8 @@
 <?php
+    session_start() ;
+    $usuario = $_SESSION ["usuario"];
+    $email = $_SESSION ["email"];
+
   $BDProductos = array(0,"CERO",0,"");
  $i=0; $iProductos=1; 
  $filas=file('archivo.txt'); 
@@ -32,7 +36,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="Alejandro Briones" content="">
+    <meta name="Analy Reyes " content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -60,8 +64,11 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 131 1979</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> valediaz.cbtis89@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 618 132 8872</a></li>
+							<font color="blue">
+              <li> Usuario: <?php echo $usuario; ?></li>
+              <li> Correo <i class="fa fa-envelope"></i>:<?php echo $email; ?></li>
+              </font>
 							</ul>
 						</div>
 					</div>
@@ -82,7 +89,7 @@
 					</div>
 					<H3>SOFTWARE PUNTO DE VENTA</H3>
 					<div class="col-sm-8">
-						Por:valeria Romero y saul luna
+						Por:Valeria romero y saul luna
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li>
